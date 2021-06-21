@@ -83,6 +83,7 @@ BuildRequires:  libldac-devel
 BuildRequires:  pulseaudio-libs-devel
 BuildRequires:  avahi-devel
 BuildRequires:  pkgconfig(webrtc-audio-processing) >= 0.2
+BuildRequires:  git
 
 Requires(pre):  shadow-utils
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
