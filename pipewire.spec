@@ -251,7 +251,7 @@ This package provides a PulseAudio implementation based on PipeWire
 %setup -q -T -b0 -n %{name}-master
 %setup -T -D -a 1
 cd subprojects
-gzip -dc /builddir/build/SOURCES/wireplumber-master.tar.gz
+gzip -dc /builddir/build/SOURCES/wireplumber-master.tar.gz | tar -xvvf -
 
 %build
 %meson \
