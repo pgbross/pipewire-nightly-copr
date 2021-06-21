@@ -91,7 +91,7 @@ BuildRequires: python-sphinx
 BuildRequires: python-sphinx_rtd_theme
 BuildRequires: python-breathe
 BuildRequires: python3-lxml
-
+BuildRequires: gobject-introspection-devel
 
 Requires(pre):  shadow-utils
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
