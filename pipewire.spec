@@ -41,6 +41,8 @@ License:        MIT
 URL:            https://pipewire.org/
 Source0:	https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/master/pipewire-master.tar.gz
 Source1:	https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/master/wireplumber-master.tar.gz
+Source2:  https://www.lua.org/ftp/lua-5.3.6.tar.gz
+Source3:  https://wrapdb.mesonbuild.com/v1/projects/lua/5.3.6/1/get_zip
 
 ## upstreamable patches
 
@@ -250,7 +252,12 @@ This package provides a PulseAudio implementation based on PipeWire
 %prep
 %setup -q -T -b0 -n %{name}-master
 %setup -T -D -a 1 -n %{name}-master
+%setup -T -D -a 2 -n %{name}-master
+%setup -T -D -a 3 -n %{name}-master
+
 mv wireplumber-master subprojects/wireplumber
+mv lua-5.3.6 subprojects/wireplumber/subprojects/lua
+
 # cd subprojects
 # mkdir wireplumber
 # cd wireplumber
