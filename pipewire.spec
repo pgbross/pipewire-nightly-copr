@@ -90,6 +90,7 @@ BuildRequires:  pkgconfig(webrtc-audio-processing) >= 0.2
 BuildRequires: python-sphinx
 BuildRequires: python-sphinx_rtd_theme
 BuildRequires: python-breathe
+BuildRequires: python3-lxml
 
 
 Requires(pre):  shadow-utils
