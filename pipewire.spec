@@ -256,7 +256,7 @@ This package provides a PulseAudio implementation based on PipeWire
 %setup -T -D -a 3 -n %{name}-master
 
 mv wireplumber-master subprojects/wireplumber
-mv lua-5.3.6 subprojects/wireplumber/subprojects/lua
+mv lua-5.3.6 subprojects/lua
 
 # cd subprojects
 # mkdir wireplumber
