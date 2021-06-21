@@ -83,7 +83,6 @@ BuildRequires:  libldac-devel
 BuildRequires:  pulseaudio-libs-devel
 BuildRequires:  avahi-devel
 BuildRequires:  pkgconfig(webrtc-audio-processing) >= 0.2
-BuildRequires:  git
 
 Requires(pre):  shadow-utils
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
@@ -265,12 +264,12 @@ This package provides a PulseAudio implementation based on PipeWire
     -D sndfile=enabled                                                  \
     -D bluez5-codec-aptx=disabled                                       \
     -D bluez5-codec-ldac=enabled                                        \
+    -D wireplumber=disabled                                             \
     %{!?with_jack:-D pipewire-jack=disabled} 					\
     %{!?with_jackserver_plugin:-D jack=disabled} 				\
     %{?with_jack:-D jack-devel=enabled} 					\
     %{!?with_alsa:-D pipewire-alsa=disabled}					\
-    %{?with_vulkan:-D vulkan=enabled} \
-    --wrap-mode=nofallback
+    %{?with_vulkan:-D vulkan=enabled}
 %meson_build
 
 %install
