@@ -40,6 +40,7 @@ Release:        %(date +%%y%%m%%d)%{?dist}
 License:        MIT
 URL:            https://pipewire.org/
 Source0:	https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/master/pipewire-master.tar.gz
+Source1:	https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/master/wireplumber-master.tar.gz
 
 ## upstreamable patches
 
@@ -248,6 +249,9 @@ This package provides a PulseAudio implementation based on PipeWire
 
 %prep
 %setup -q -T -b0 -n %{name}-master
+%setup -T -D -a 1
+cd subprojects
+gzip -dc /builddir/build/SOURCES/wireplumber-master.tar.gz
 
 %build
 %meson \
@@ -264,7 +268,6 @@ This package provides a PulseAudio implementation based on PipeWire
     -D sndfile=enabled                                                  \
     -D bluez5-codec-aptx=disabled                                       \
     -D bluez5-codec-ldac=enabled                                        \
-    -D wireplumber=disabled                                             \
     %{!?with_jack:-D pipewire-jack=disabled} 					\
     %{!?with_jackserver_plugin:-D jack=disabled} 				\
     %{?with_jack:-D jack-devel=enabled} 					\
