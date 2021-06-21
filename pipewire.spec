@@ -87,6 +87,11 @@ BuildRequires:  pulseaudio-libs-devel
 BuildRequires:  avahi-devel
 BuildRequires:  pkgconfig(webrtc-audio-processing) >= 0.2
 
+BuildRequires: python-sphinx
+BuildRequires: python-sphinx_rtd_theme
+BuildRequires: python-breathe
+
+
 Requires(pre):  shadow-utils
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 Requires:       systemd >= 184
