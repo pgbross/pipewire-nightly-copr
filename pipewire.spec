@@ -269,7 +269,8 @@ This package provides a PulseAudio implementation based on PipeWire
     %{!?with_jackserver_plugin:-D jack=disabled} 				\
     %{?with_jack:-D jack-devel=enabled} 					\
     %{!?with_alsa:-D pipewire-alsa=disabled}					\
-    %{?with_vulkan:-D vulkan=enabled}
+    %{?with_vulkan:-D vulkan=enabled} \
+    --wrap-mode=nofallback
 %meson_build
 
 %install
