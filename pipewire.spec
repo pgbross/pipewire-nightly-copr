@@ -127,6 +127,13 @@ Recommends:     %{name}%{?_isa} = %{version}-%{release}
 %description wireplumber-devel
 This package contains the development files for a modular session/policy manager for PipeWire
 
+%package wireplumber-doc
+Summary:        Wireplumber documentation
+License:        MIT
+
+%description wireplumber-doc
+This package contains documentation for wireplumber.
+
 
 %package libs
 Summary:        Libraries for PipeWire clients
@@ -494,6 +501,8 @@ systemctl --no-reload preset --global pipewire.socket >/dev/null 2>&1 || :
 
 %files doc
 %{_datadir}/doc/pipewire/html
+
+%files wireplumber-doc
 %{_datadir}/doc/wireplumber/html
 
 %files utils
