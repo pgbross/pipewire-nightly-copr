@@ -95,6 +95,7 @@ BuildRequires: python-sphinx_rtd_theme
 BuildRequires: python-breathe
 BuildRequires: python3-lxml
 BuildRequires: gobject-introspection-devel
+BuildRequires: dbus-daemon
 
 
 Requires(pre):  shadow-utils
