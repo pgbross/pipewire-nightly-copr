@@ -307,9 +307,9 @@ mv lua-5.3.6 subprojects/lua
     %{!?with_alsa:-D pipewire-alsa=disabled}                            \
     %{?with_vulkan:-D vulkan=enabled}                                   \
     -D session-managers=media-session,wireplumber                       \
-    -Dvideotestsrc=true                                                 \
-    -Daudiotestsrc=true                                                 \
-    -Dtest=true
+    -D videotestsrc=enabled                                                 \
+    -D audiotestsrc=enabled                                                 \
+    -D test=enabled
 %meson_build
 
 %install
