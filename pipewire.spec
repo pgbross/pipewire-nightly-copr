@@ -124,6 +124,10 @@ Summary:        Development files for wireplumber
 License:        MIT
 Recommends:     %{name}%{?_isa} = %{version}-%{release}
 
+%description wireplumber-devel
+This package contains the development files for a modular session/policy manager for PipeWire
+
+
 %package libs
 Summary:        Libraries for PipeWire clients
 License:        MIT
