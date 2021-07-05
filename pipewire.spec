@@ -306,7 +306,10 @@ mv lua-5.3.6 subprojects/lua
     %{?with_jack:-D jack-devel=enabled}                                 \
     %{!?with_alsa:-D pipewire-alsa=disabled}                            \
     %{?with_vulkan:-D vulkan=enabled}                                   \
-    -D session-managers=media-session,wireplumber
+    -D session-managers=media-session,wireplumber                       \
+    -Dvideotestsrc=true                                                 \
+    -Daudiotestsrc=true                                                 \
+    -Dtest=true
 %meson_build
 
 %install
