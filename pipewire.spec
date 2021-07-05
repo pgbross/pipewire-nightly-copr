@@ -114,6 +114,11 @@ Summary:        A modular session/policy manager for PipeWire
 License:        MIT
 Recommends:     %{name}%{?_isa} = %{version}-%{release}
 
+Provides:       wireplumber
+
+%description wireplumber
+This package contains a modular session/policy manager for PipeWire
+
 %package wireplumber-devel
 Summary:        Development files for wireplumber
 License:        MIT
@@ -481,6 +486,7 @@ systemctl --no-reload preset --global pipewire.socket >/dev/null 2>&1 || :
 
 %files doc
 %{_datadir}/doc/pipewire/html
+%{_datadir}/doc/wireplumber/html
 
 %files utils
 %{_bindir}/pw-mon
