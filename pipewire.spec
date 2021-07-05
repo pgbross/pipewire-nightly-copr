@@ -478,6 +478,7 @@ systemctl --no-reload preset --global pipewire.socket >/dev/null 2>&1 || :
 %{_datadir}/pipewire/client.conf
 %{_datadir}/pipewire/client-rt.conf
 
+
 %files gstreamer
 %{_libdir}/gstreamer-1.0/libgstpipewire.*
 
@@ -487,6 +488,13 @@ systemctl --no-reload preset --global pipewire.socket >/dev/null 2>&1 || :
 %{_includedir}/spa-%{spaversion}/
 %{_libdir}/pkgconfig/libpipewire-%{apiversion}.pc
 %{_libdir}/pkgconfig/libspa-%{spaversion}.pc
+%{_libdir}/spa-%{spaversion}/audiotestsrc/libspa-audiotestsrc.so
+%{_libdir}/spa-%{spaversion}/test/libspa-test.so
+%{_libdir}/spa-%{spaversion}/videotestsrc/libspa-videotestsrc.so
+%{_prefix}/lib/debug/usr/lib64/spa-0.2/audiotestsrc/libspa-audiotestsrc.so-%{version}-%{release}.fc34.x86_64.debug
+%{_prefix}/lib/debug/usr/lib64/spa-0.2/test/libspa-test.so-%{version}-%{release}.fc34.x86_64.debug
+%{_prefix}/lib/debug/usr/lib64/spa-0.2/videotestsrc/libspa-videotestsrc.so-%{version}-%{release}.fc34.x86_64.debug
+
 
 %files doc
 %{_datadir}/doc/pipewire/html
