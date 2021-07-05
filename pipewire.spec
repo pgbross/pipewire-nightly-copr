@@ -109,6 +109,16 @@ Requires:       pipewire-session-manager
 PipeWire is a multimedia server for Linux and other Unix like operating
 systems.
 
+%package wireplumber
+Summary:        A modular session/policy manager for PipeWire
+License:        MIT
+Recommends:     %{name}%{?_isa} = %{version}-%{release}
+
+%package wireplumber-devel
+Summary:        Development files for wireplumber
+License:        MIT
+Recommends:     %{name}%{?_isa} = %{version}-%{release}
+
 %package libs
 Summary:        Libraries for PipeWire clients
 License:        MIT
@@ -383,6 +393,26 @@ systemctl --no-reload preset --global pipewire.socket >/dev/null 2>&1 || :
 %systemd_user_post pipewire-pulse.service
 %systemd_user_post pipewire-pulse.socket
 %endif
+
+%files wireplumber
+%license LICENSE
+%{_bindir}/wireplumber
+%{_bindir}/wpctl
+%{_bindir}/wpexec
+%{_sysconfdir}/wireplumber/*
+%{_datadir}/wireplumber/*
+%{_libdir}/wireplumber-0.4/libwireplumber-*.so
+%{_libdir}/libwireplumber-0.4.so.*
+%{_libdir}/girepository-1.0/Wp-0.4.typelib
+%{_datadir}/gir-1.0/Wp-0.4.gir
+%{_prefix}/lib/systemd/user/wireplumber.service
+%{_prefix}/lib/systemd/user/wireplumber@.service
+
+%files wireplumber-devel
+%{_includedir}/wireplumber-0.4/*
+%{_libdir}/libwireplumber-0.4.so
+%{_libdir}/pkgconfig/wireplumber-0.4.pc
+
 
 %files
 %license LICENSE COPYING
